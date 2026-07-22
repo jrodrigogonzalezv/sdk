@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDK Sudamerik | Inversión de Impacto</title>
+    <meta name="description" content="SDK Sudamerik es una Administradora de Fondos de Capitales privados con apalancamiento público, enfocada en inversión de impacto para Latinoamérica.">
+    <link rel="icon" type="image/png" href="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-2.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Kanit:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/site.css">
+    <style>
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HERO SLIDER --- */
+        .hero-slider {
+            position: relative;
+            height: 85vh;
+            width: 100%;
+            overflow: hidden;
+            background-color: var(--white);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-header);
+            font-size: clamp(32px, 6vw, 64px);
+            color: var(--primary-dark);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero-prop {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: clamp(16px, 3vw, 20px);
+            color: var(--text-black);
+            font-weight: 300;
+        }
+
+        .hero-prop::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background-color: var(--text-black);
+            flex-shrink: 0;
+        }
+
+        /* --- PURPOSE --- */
+        .purpose {
+            background-color: var(--bg-cream);
+            padding: 80px 0;
+        }
+
+        .purpose-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .purpose-image img {
+            width: 100%;
+            max-width: 380px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .purpose-text h2 {
+            font-size: clamp(24px, 4vw, 28px);
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        /* --- PILLARS --- */
+        .pillars {
+            background-color: var(--bg-dark-section);
+            padding: 80px 0;
+            color: var(--white);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            font-family: var(--font-header);
+            font-size: 24px;
+        }
+
+        .section-title img {
+            height: 45px;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .pillar-card {
+            background: rgba(255,255,255,0.05);
+            padding: 35px 25px;
+            border-radius: 10px;
+        }
+
+        /* --- VERTICALES --- */
+        .verticals {
+            padding: 80px 0;
+            background-color: var(--bg-cream);
+        }
+
+        .verticals-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .vertical-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-black);
+            aspect-ratio: 1 / 1;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .vertical-card img {
+            width: 60px;
+            margin-bottom: 20px;
+        }
+
+        .card-impact { background-color: var(--color-impact); }
+        .card-turismo { background-color: var(--color-turismo); }
+        .card-mineria { background-color: var(--color-mineria); cursor: default; }
+        .card-mujer { background-color: var(--color-mujer); }
+
+        .card-mineria .coming-soon {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.6;
+            margin-top: 6px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 980px) {
+            .hero-slider { height: 70vh; }
+
+            /* Grids a una columna */
+            .purpose-grid, .pillars-grid, .verticals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .verticals-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .purpose-image { order: -1; }
+            .vertical-card { aspect-ratio: auto; min-height: 180px; }
+        }
+
+        @media (max-width: 480px) {
+            .verticals-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/SDK_LOGOTIPO_PRINCIPAL_03-1-1-1-3.png" alt="SDK Sudamerik" style="filter: brightness(0);">
+            </a>
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav>
+            <ul id="nav-list">
+                <li><a href="equipo-sdk.html">Equipo SDK</a></li>
+                <li><a href="impact-investment.html">Fondo Impact Investment</a></li>
+                <li><a href="fondo-turismo-sustentable.html">Fondo Turismo Sustentable</a></li>
+                <li><a href="fondo-impulsa-mujer.html">Fondo Impulsa Mujer</a></li>
+                <li><a href="contacto.html">Hablemos</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <section class="hero-slider">
+        <div class="slide active" style="background-image: url('img/iStock-1475063194-2.jpg');">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Inversión de impacto para Latinoamérica</h1>
+                    <div class="hero-prop">
+                        Potenciar el desarrollo de negocios que impactan positivamente el planeta, es nuestro propósito.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="purpose">
+        <div class="container">
+            <div class="purpose-grid">
+                <div class="purpose-image">
+                    <img src="img/Asset-1.png" alt="Riesgo Retorno Impacto">
+                </div>
+                <div class="purpose-text">
+                    <h2>Creemos en una nueva economía de impacto para Latinoamérica</h2>
+                    <p><strong>Somos una Administradora de Fondos de Capitales privados con apalancamiento público</strong>, cuyo foco de inversión son empresas de alto impacto que agreguen valor tecnológico, social, medioambiental y económico, fomenten el desarrollo de los territorios y sus resultados sean medibles a través de la <strong>Certificación B.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pillars">
+        <div class="container">
+            <div class="section-title">
+                <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1.png" alt="Isotipo">
+                <span>Pilares SDK</span>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>Rentabilidad con Impacto</h3>
+                    <p>Creemos que la rentabilidad financiera es primordial para generar un impacto sostenible y medible en el tiempo. Garantizamos que nuestros portafolios tengan una visión, gestión y medición de impacto permanente.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Innovación</h3>
+                    <p>Buscamos proyectos con mérito innovador que consideren el uso de tecnologías y nuevos modelos de negocios en industrias y segmentos emergentes.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Inversionistas</h3>
+                    <p>Agregamos valor a nuestros inversionistas y emprendedores a lo largo del camino que recorren junto a nosotros, operando con foco en sostenibilidad financiera, impacto y modelos de gestión de excelencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="verticals">
+        <div class="container">
+            <div class="section-title">
+                <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1-1-228x300-1.png" alt="Isotipo Black">
+                <span style="color: black;">Verticales de Impacto</span>
+            </div>
+
+            <div class="verticals-grid">
+                <a href="impact-investment.html" class="vertical-card card-impact">
+                    <img src="img/SDK_ICONOS_PPT-01-2.png" alt="Icono 1">
+                    <h4>Fondo Impact Investment</h4>
+                </a>
+                <a href="fondo-turismo-sustentable.html" class="vertical-card card-turismo">
+                    <img src="img/SDK_ICONOS_PPT-02-2.png" alt="Icono 2">
+                    <h4>Turismo Sustentable</h4>
+                </a>
+                <div class="vertical-card card-mineria" aria-disabled="true">
+                    <img src="img/SDK_ICONOS_PPT-03-1-1.png" alt="Icono 3">
+                    <h4>Minería Sustentable</h4>
+                    <span class="coming-soon">Próximamente</span>
+                </div>
+                <a href="fondo-impulsa-mujer.html" class="vertical-card card-mujer">
+                    <img src="img/SDK_ICONOS_PPT-04-1-1.png" alt="Icono 4">
+                    <h4>Fondo Impulsa Mujer</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="img/SDK_LOGOTIPO.png" alt="SDK Sudamerik" class="footer-logo-main">
+                <p class="footer-disclaimer">Los fondos de inversión privados administrados por la administradora de fondos Sudamerik S.A., no son regulados ni fiscalizados por la CMF</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navegación</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="equipo-sdk.html">Equipo SDK</a></li>
+                    <li><a href="impact-investment.html">Fondo Impact Investment</a></li>
+                    <li><a href="fondo-turismo-sustentable.html">Fondo Turismo Sustentable</a></li>
+                    <li><a href="fondo-impulsa-mujer.html">Fondo Impulsa Mujer</a></li>
+                    <li><a href="https://app.regcheq.com/public/denounces/6331c017b1f8105fa3d3ee5e" target="_blank" rel="noopener">Canal de denuncias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contacto</h5>
+                <p>hablemos@sdk-latam.com</p>
+                <p>+56 2 2869 6933</p>
+                <p>Cerro El Plomo 5630, Of. 201</p>
+                <p>Las Condes, Santiago</p>
+                <a href="https://www.linkedin.com/company/sudamerik/" target="_blank" rel="noopener" class="footer-linkedin">LinkedIn →</a>
+            </div>
+            <div class="footer-col footer-col-b">
+                <img src="img/Pagina_web__1_-removebg-preview-3.png" width="200" alt="Empresa B">
+            </div>
+        </div>
+        <div class="copyright-bar">
+            Copyright © 2024 Diseñado por UnderMarket Servicios Informáticos Ltda. – Todos los derechos reservados
+        </div>
+    </footer>
+
+    <script src="js/site.js"></script>
+    <script>
+        // Rotación del hero slider (propio de esta página)
+        const slides = document.querySelectorAll('.slide');
+        if (slides.length > 1) {
+            let current = 0;
+            setInterval(() => {
+                slides[current].classList.remove('active');
+                current = (current + 1) % slides.length;
+                slides[current].classList.add('active');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>

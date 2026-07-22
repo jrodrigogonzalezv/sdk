@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDK Sudamerik | Inversión de Impacto</title>
+    
+    <!-- Fuentes: Kanit para títulos e Inter para cuerpo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Kanit:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #10281a;
+            --bg-cream: #fcf7f2;
+            --bg-dark-section: #263e3f;
+            --text-black: #000000;
+            --text-gray: #4e4e4e;
+            --white: #ffffff;
+            --font-header: 'Kanit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-black);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background-color: rgba(252, 248, 242, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 10px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: var(--transition);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-black);
+            font-family: var(--font-header);
+            font-weight: 500;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            opacity: 0.7;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), 
+                        url('https://sdk-latam.com/wp-content/uploads/2024/11/iStock-1475063194-2.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-header);
+            font-size: clamp(32px, 5vw, 60px);
+            color: var(--primary-dark);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero blockquote {
+            font-size: 20px;
+            font-weight: 300;
+            border-left: 3px solid var(--primary-dark);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* --- PURPOSE SECTION --- */
+        .purpose {
+            background-color: var(--bg-cream);
+            padding: 100px 0;
+        }
+
+        .purpose-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .purpose-image img {
+            width: 100%;
+            max-width: 450px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .purpose-text h2 {
+            font-family: var(--font-header);
+            font-size: 32px;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .purpose-text p {
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        /* --- PILLARS SECTION --- */
+        .pillars {
+            background-color: var(--bg-dark-section);
+            padding: 80px 0;
+            color: var(--white);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            font-family: var(--font-header);
+            font-size: 28px;
+        }
+
+        .section-title img {
+            height: 40px;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .pillar-card {
+            background: rgba(255,255,255,0.1);
+            padding: 40px 30px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .pillar-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .pillar-card h3 {
+            font-family: var(--font-header);
+            font-size: 22px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .pillar-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--white);
+        }
+
+        .pillar-card p {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        /* --- VERTICALS SECTION --- */
+        .verticals {
+            padding: 100px 0;
+            background-color: var(--bg-cream);
+        }
+
+        .verticals-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .vertical-item {
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-black);
+            transition: var(--transition);
+        }
+
+        .vertical-item:hover {
+            transform: scale(1.05);
+        }
+
+        .vertical-item img {
+            width: 100%;
+            max-width: 160px;
+            margin-bottom: 15px;
+        }
+
+        .vertical-item h4 {
+            font-family: var(--font-header);
+            font-size: 16px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: linear-gradient(180deg, #10281a 0%, #1a5e91 100%);
+            color: var(--white);
+            padding: 80px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h5 {
+            font-family: var(--font-header);
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .footer-disclaimer {
+            font-size: 12px !important;
+            opacity: 0.6;
+        }
+
+        .certifications {
+            max-width: 200px;
+            margin-top: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 980px) {
+            .purpose-grid, .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            .verticals-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero {
+                text-align: center;
+            }
+            .hero blockquote {
+                border-left: none;
+                border-top: 3px solid var(--primary-dark);
+                padding: 20px 0 0 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none; /* Simplificado para demo, aquí iría el menú hamburguesa */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="https://sdk-latam.com/wp-content/uploads/2024/10/SDK_LOGOTIPO.png" alt="SDK Sudamerik"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Equipo SDK</a></li>
+                    <li><a href="#">Fondos</a></li>
+                    <li><a href="#">Hablemos</a></li>
+                    <li><a href="#">🇺🇸 Inglés</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Inversión de impacto para Latinoamérica</h1>
+                <blockquote>
+                    Potenciar el desarrollo de negocios que impactan positivamente el planeta, es nuestro propósito.
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purpose -->
+    <section class="purpose">
+        <div class="container">
+            <div class="purpose-grid">
+                <div class="purpose-image">
+                    <img src="https://sdk-latam.com/wp-content/uploads/2024/09/Asset-1.png" alt="Impacto SDK">
+                </div>
+                <div class="purpose-text">
+                    <h2>Creemos en una nueva economía de impacto para Latinoamérica</h2>
+                    <p><strong>Somos una Administradora de Fondos de Capitales privados con apalancamiento público</strong>, cuyo foco de inversión son empresas de alto impacto que agreguen valor tecnológico, social, medioambiental y económico.</p>
+                    <p>Fomentamos el desarrollo de los territorios y nuestros resultados son medibles a través de la <strong>Certificación B.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars -->
+    <section class="pillars">
+        <div class="container">
+            <div class="section-title">
+                <img src="https://sdk-latam.com/wp-content/uploads/2024/10/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1.png" alt="Icono">
+                <span>Pilares SDK</span>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>Rentabilidad con Impacto</h3>
+                    <p>Creemos que la rentabilidad financiera es primordial para generar un impacto sostenible y medible en el tiempo. Garantizamos que nuestros portafolios tengan una visión, gestión y medición de impacto permanente.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Innovación</h3>
+                    <p>Buscamos proyectos con mérito innovador que consideren el uso de tecnologías y nuevos modelos de negocios en industrias y segmentos emergentes.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Inversionistas</h3>
+                    <p>Agregamos valor a nuestros inversionistas y emprendedores a lo largo del camino que recorren junto a nosotros, operando con foco en sostenibilidad financiera.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verticals -->
+    <section class="verticals">
+        <div class="container">
+            <div class="section-title" style="color: black;">
+                <img src="https://sdk-latam.com/wp-content/uploads/2024/10/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1-1-228x300-1.png" alt="Icono">
+                <span>Verticales de Impacto</span>
+            </div>
+            <div class="verticals-grid">
+                <a href="#" class="vertical-item">
+                    <img src="https://sdk-latam.com/wp-content/uploads/2024/04/SDK_ICONOS_PPT-01-2.png" alt="Impact">
+                    <h4>Fondo Impact Investment</h4>
+                </a>
+                <a href="#" class="vertical-item">
+                    <img src="https://sdk-latam.com/wp-content/uploads/2024/04/SDK_ICONOS_PPT-02-2.png" alt="Turismo">
+                    <h4>Turismo Sustentable</h4>
+                </a>
+                <a href="#" class="vertical-item">
+                    <img src="https://sdk-latam.com/wp-content/uploads/2024/04/SDK_ICONOS_PPT-03-1-1.png" alt="Mineria">
+                    <h4>Minería Sustentable</h4>
+                </a>
+                <a href="#" class="vertical-item">
+                    <img src="https://sdk-latam.com/wp-content/uploads/2024/04/SDK_ICONOS_PPT-04-1-1.png" alt="Mujer">
+                    <h4>Fondo Impulsa Mujer</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://sdk-latam.com/wp-content/uploads/2024/10/SDK_LOGOTIPO.png" alt="Logo White" class="footer-logo" style="filter: brightness(0) invert(1);">
+                    <p class="footer-disclaimer">Los fondos de inversión privados administrados por Sudamerik S.A. no son regulados ni fiscalizados por la CMF.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Navegación</h5>
+                    <a href="#">Inicio</a>
+                    <a href="#">Equipo SDK</a>
+                    <a href="#">Fondos</a>
+                    <a href="#">Contacto</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Contacto</h5>
+                    <p>hablemos@sdk-latam.com</p>
+                    <p>Av. Apoquindo 4775, Of 1002. Las Condes</p>
+                </div>
+                <div class="footer-col">
+                    <img src="https://sdk-latam.com/wp-content/uploads/2024/09/Pagina_web__1_-removebg-preview-3.png" alt="Certifications" class="certifications">
+                </div>
+            </div>
+            <div class="copyright">
+                Copyright © 2024 – Todos los derechos reservados
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Manejo del scroll para el header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

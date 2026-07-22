@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo Impact Investment | SDK Sudamerik</title>
+    <meta name="description" content="El Fondo Impact Investment de SDK Sudamerik invierte en empresas de alto impacto social, medioambiental y económico en Latinoamérica.">
+    <link rel="icon" type="image/png" href="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-2.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Kanit:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/site.css">
+    <style>
+        :root {
+            --orange-impact: #fa3b00;
+            --navy-impact: #16264a;
+        }
+
+        /* --- HERO IMPACT --- */
+        #hero-impact {
+            min-height: 65vh;
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('img/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+        }
+
+        .hero-title-box {
+            border-left: 4px solid var(--orange-impact);
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        /* --- LOGO SLIDER --- */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .slider-track {
+            display: flex;
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+        .slider-item img {
+            max-height: 50px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 980px) {
+            #hero-impact { min-height: 50vh; text-align: center; }
+            .hero-title-box { border-left: none; border-top: 3px solid var(--orange-impact); padding: 20px 0 0; margin-top: 30px; }
+        }
+
+        @media (max-width: 640px) {
+            #hero-impact h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/SDK_LOGOTIPO_PRINCIPAL_03-1-1-1-3.png" alt="SDK Sudamerik" style="filter: brightness(0);">
+            </a>
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav>
+            <ul id="nav-list">
+                <li><a href="equipo-sdk.html">Equipo SDK</a></li>
+                <li><a href="impact-investment.html">Fondo Impact Investment</a></li>
+                <li><a href="fondo-turismo-sustentable.html">Fondo Turismo Sustentable</a></li>
+                <li><a href="fondo-impulsa-mujer.html">Fondo Impulsa Mujer</a></li>
+                <li><a href="contacto.html">Hablemos</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <section id="hero-impact">
+            <div class="max-w-[1100px] mx-auto px-5 w-full text-white">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1-228x300-1.png" class="h-20 brightness-0 invert" alt="">
+                    <h1 class="text-4xl md:text-7xl font-bold leading-tight">Fondo Impact<br>Investment</h1>
+                </div>
+                <div class="hero-title-box max-w-2xl">
+                    <p class="text-white text-lg md:text-2xl font-medium leading-relaxed">Potenciar el desarrollo de negocios que impactan positivamente el planeta, es nuestro propósito.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 bg-white overflow-hidden border-b">
+            <div class="slider-track">
+                <div class="slider-item px-10"><img src="img/logo2-1-300x168.png" alt="LPG"></div>
+                <div class="slider-item px-10"><img src="img/logo_cognitiva_cel-1-300x131.png" alt="Cognitiva"></div>
+                <div class="slider-item px-10"><img src="img/Ecoterra-FullColor_8b5a2a42-c9b6-49e0-9c7c-1ade5cff5b74-remo-300x168.png" alt="Ecoterra"></div>
+                <div class="slider-item px-10"><img src="img/Denda-logo-300x124.webp" alt="Denda"></div>
+                <div class="slider-item px-10"><img src="img/logo2-1-300x168.png" alt="LPG"></div>
+                <div class="slider-item px-10"><img src="img/logo_cognitiva_cel-1-300x131.png" alt="Cognitiva"></div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 bg-[#fcf7f2]">
+            <div class="max-w-[1100px] mx-auto px-5">
+                <div class="grid grid-cols-1 md:grid-cols-3 border-2 border-[#fa3b00] items-stretch bg-white rounded-xl md:rounded-none overflow-hidden">
+                    <div class="p-10 flex items-center justify-center border-b md:border-b-0 md:border-r border-[#fa3b00]/20">
+                        <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-2.png" class="h-32 opacity-80" alt="SDK">
+                    </div>
+                    <div class="p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#fa3b00]/20 text-center">
+                        <h2 class="text-xl font-bold mb-4">Inversión de impacto alcanzó un AUM de USD $1,1T</h2>
+                        <span class="text-xs text-gray-400">GIIN, 2022</span>
+                    </div>
+                    <div class="p-10 flex flex-col justify-center gap-4 text-sm leading-relaxed">
+                        <p>Actualmente, los movimientos de capital consideran el trinomio riesgo-retorno-impacto.</p>
+                        <p>Nuestro primer fondo impulsa el impacto social, medioambiental y económico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20">
+            <div class="max-w-[1100px] mx-auto px-5">
+                <div class="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-2xl">
+                    <div class="md:w-2/5 bg-[#fa3b00] p-10 md:p-12 text-white flex flex-col items-center text-center">
+                        <img src="img/A-FOTO-OFICIAL_IMG_5341-Enhanced-NR-1-scaled-1-500x500-2.jpg" class="w-40 h-40 md:w-48 md:h-48 rounded-2xl object-cover mb-6 shadow-lg" alt="Sebastián Martin">
+                        <h3 class="text-2xl font-bold">Sebastián Martin</h3>
+                        <p class="text-lg opacity-90">Fund Manager</p>
+                    </div>
+                    <div class="md:w-3/5 bg-[#16264a] p-10 md:p-12 text-white flex flex-col justify-center items-center text-center">
+                        <p class="text-lg md:text-xl italic font-light leading-relaxed mb-8">"Somos visionarios preocupados de innovar pensando en la rentabilidad y el impacto a largo plazo."</p>
+                        <a href="mailto:smartin@sudamerik.net" class="bg-[#fa3b00] hover:bg-[#ff4500] transition-colors px-10 py-3 rounded-full font-bold">HABLEMOS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 bg-white">
+            <div class="max-w-[1100px] mx-auto px-5">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#fa3b00] mb-12 text-center md:text-left">Conoce nuestro portafolio</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="group relative overflow-hidden rounded-xl bg-gray-100 aspect-[4/3] shadow-sm">
+                        <img src="img/hemp_887151ac-c95c-4bc4-87fd-4586ecb196a3-500x382.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Austral Hemp">
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl bg-gray-100 aspect-[4/3] shadow-sm">
+                        <img src="img/logo2-1-300x168.png" class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500" alt="Latam Payment">
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl bg-gray-100 aspect-[4/3] shadow-sm">
+                        <img src="img/logo_cognitiva_cel-1-300x131.png" class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500" alt="Cognitiva">
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl bg-gray-100 aspect-[4/3] shadow-sm">
+                        <img src="img/Ecoterra-FullColor_8b5a2a42-c9b6-49e0-9c7c-1ade5cff5b74-remo-500x374.png" class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500" alt="Ecoterra">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="img/SDK_LOGOTIPO.png" alt="SDK Sudamerik" class="footer-logo-main">
+                <p class="footer-disclaimer">Los fondos de inversión privados administrados por la administradora de fondos Sudamerik S.A., no son regulados ni fiscalizados por la CMF</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navegación</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="equipo-sdk.html">Equipo SDK</a></li>
+                    <li><a href="impact-investment.html">Fondo Impact Investment</a></li>
+                    <li><a href="fondo-turismo-sustentable.html">Fondo Turismo Sustentable</a></li>
+                    <li><a href="fondo-impulsa-mujer.html">Fondo Impulsa Mujer</a></li>
+                    <li><a href="https://app.regcheq.com/public/denounces/6331c017b1f8105fa3d3ee5e" target="_blank" rel="noopener">Canal de denuncias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contacto</h5>
+                <p>hablemos@sdk-latam.com</p>
+                <p>+56 2 2869 6933</p>
+                <p>Cerro El Plomo 5630, Of. 201</p>
+                <p>Las Condes, Santiago</p>
+                <a href="https://www.linkedin.com/company/sudamerik/" target="_blank" rel="noopener" class="footer-linkedin">LinkedIn →</a>
+            </div>
+            <div class="footer-col footer-col-b">
+                <img src="img/Pagina_web__1_-removebg-preview-3.png" width="200" alt="Empresa B">
+            </div>
+        </div>
+        <div class="copyright-bar">
+            Copyright © 2024 Diseñado por UnderMarket Servicios Informáticos Ltda. – Todos los derechos reservados
+        </div>
+    </footer>
+
+    <script src="js/site.js"></script>
+</body>
+</html>

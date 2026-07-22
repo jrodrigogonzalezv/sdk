@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo Impulsa Mujer | SDK Sudamerik</title>
+    <meta name="description" content="El Fondo Impulsa Mujer de SDK Sudamerik apuesta por la equidad de género en venture capital, invirtiendo en startups lideradas por mujeres.">
+    <link rel="icon" type="image/png" href="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-2.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Kanit:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/site.css">
+    <style>
+        :root {
+            --color-mujer: #ff00b6;
+        }
+
+        /* --- HERO MUJER --- */
+        #hero-mujer {
+            min-height: 65vh;
+            background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('img/fondo-impulsa-mujer-scaled-1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+        }
+
+        .hero-title-box {
+            border-left: 4px solid var(--color-mujer);
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        /* --- VENTURE PARTNERS --- */
+        .vp-card img {
+            transition: transform 0.5s ease;
+        }
+        .vp-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 980px) {
+            #hero-mujer { min-height: 50vh; text-align: center; }
+            .hero-title-box { border-left: none; border-top: 3px solid var(--color-mujer); padding: 20px 0 0; margin-top: 30px; }
+        }
+
+        @media (max-width: 640px) {
+            #hero-mujer h1 { font-size: 2.5rem; }
+            .grid-cols-4 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/SDK_LOGOTIPO_PRINCIPAL_03-1-1-1-3.png" alt="SDK Sudamerik" style="filter: brightness(0);">
+            </a>
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav>
+            <ul id="nav-list">
+                <li><a href="equipo-sdk.html">Equipo SDK</a></li>
+                <li><a href="impact-investment.html">Fondo Impact Investment</a></li>
+                <li><a href="fondo-turismo-sustentable.html">Fondo Turismo Sustentable</a></li>
+                <li><a href="fondo-impulsa-mujer.html">Fondo Impulsa Mujer</a></li>
+                <li><a href="contacto.html">Hablemos</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <section id="hero-mujer">
+            <div class="max-w-[1100px] mx-auto px-5 w-full text-black">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1-1.png" class="h-20" alt="">
+                    <h1 class="text-4xl md:text-7xl font-bold leading-tight">Fondo<br>Impulsa Mujer</h1>
+                </div>
+                <div class="hero-title-box max-w-2xl">
+                    <p class="text-black text-lg md:text-2xl font-medium leading-relaxed">Potenciar el desarrollo de negocios que impactan positivamente nuestro planeta, es nuestro propósito.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 bg-[#fcf7f2]">
+            <div class="max-w-[1100px] mx-auto px-5">
+                <div class="grid grid-cols-1 md:grid-cols-3 border-2 border-[#ff00b6] items-stretch bg-white rounded-xl md:rounded-none overflow-hidden">
+                    <div class="p-10 flex items-center justify-center border-b md:border-b-0 md:border-r border-[#ff00b6]/20">
+                        <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-2.png" class="h-32 opacity-80" alt="SDK Isotipo">
+                    </div>
+                    <div class="p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#ff00b6]/20 text-center">
+                        <h2 class="text-xl font-bold leading-tight">Nuestro propósito es impulsar la transformación de la mujer en la sociedad a través del emprendimiento e innovación.</h2>
+                    </div>
+                    <div class="p-10 flex flex-col justify-center gap-4 text-sm leading-relaxed">
+                        <p>Las startups lideradas por mujeres tienen un 63% de mejor performance en 6 años. Además de tener un 20% más de capacidad de innovación y 30% de reducción en riesgos operacionales.</p>
+                        <p class="font-bold text-[#ff00b6]">USD $97B es el tamaño de mercado para tecnologías que promuevan el bienestar y empoderamiento femenino tendrá al 2030.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20">
+            <div class="max-w-[1100px] mx-auto px-5">
+                <div class="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-2xl border border-[#ff00b6]/20">
+                    <div class="md:w-2/5 bg-[#ff00b6] p-10 md:p-12 text-white flex flex-col items-center text-center">
+                        <img src="img/A-FOTO-OFICIAL-1-scaled-1-500x500-1.jpg" class="w-40 h-40 md:w-48 md:h-48 rounded-2xl object-cover mb-6 shadow-lg" alt="Javiera Rivera">
+                        <h3 class="text-2xl font-bold">Javiera Rivera</h3>
+                        <p class="text-lg opacity-90">Fund Manager y Líder de Impacto</p>
+                    </div>
+                    <div class="md:w-3/5 bg-[#16264a] p-10 md:p-12 text-white flex flex-col justify-center items-center text-center">
+                        <p class="text-lg md:text-xl italic font-light leading-relaxed mb-8">«El Fondo Impulsa Mujer apuesta por la equidad de género en la industria del venture capital. Buscamos realizar un impacto en la sociedad fomentando la participación femenina y empoderando mujeres en tecnología.»</p>
+                        <a href="mailto:jrivera@sdk-latam.com" class="bg-[#ff00b6] hover:bg-[#e600a4] transition-colors px-10 py-3 rounded-full font-bold">HABLEMOS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-[#fcf7f2]">
+            <div class="max-w-[1100px] mx-auto px-5">
+                <div class="flex flex-col md:flex-row items-center gap-4 mb-12 md:mb-16">
+                    <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1-1-228x300-1-228x300.png" class="h-12 md:h-16" alt="">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#ff00b6] text-center md:text-left">CONOCE A NUESTRAS VENTURE PARTNERS</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="vp-card text-center">
+                        <div class="rounded-2xl overflow-hidden mb-4 aspect-square shadow-md">
+                            <img src="img/3-4.jpg" class="w-full h-full object-cover" alt="Francisca Valdés">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#ff00b6]">Francisca Valdés</h3>
+                        <a href="https://www.linkedin.com/in/francisca-valdés-vigil-88a8552a/" target="_blank" class="inline-block mt-2 text-[#ff00b6] hover:opacity-70">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="vp-card text-center">
+                        <div class="rounded-2xl overflow-hidden mb-4 aspect-square shadow-md">
+                            <img src="img/2-3.jpg" class="w-full h-full object-cover" alt="Patricia Barrientos">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#ff00b6]">Patricia Barrientos</h3>
+                        <a href="https://www.linkedin.com/in/patriciabarrientosrosenberg/" target="_blank" class="inline-block mt-2 text-[#ff00b6] hover:opacity-70">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="vp-card text-center">
+                        <div class="rounded-2xl overflow-hidden mb-4 aspect-square shadow-md">
+                            <img src="img/1-2.jpg" class="w-full h-full object-cover" alt="Carolina Carmona">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#ff00b6]">Carolina Carmona</h3>
+                        <a href="https://www.linkedin.com/in/carolina-carmona-alba-b02651101/" target="_blank" class="inline-block mt-2 text-[#ff00b6] hover:opacity-70">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="vp-card text-center">
+                        <div class="rounded-2xl overflow-hidden mb-4 aspect-square shadow-md">
+                            <img src="img/El-texto-del-parrafo-1.png" class="w-full h-full object-cover" alt="Guadalupe Sánchez">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#ff00b6]">Guadalupe Sánchez</h3>
+                        <a href="https://www.linkedin.com/in/lupesan/" target="_blank" class="inline-block mt-2 text-[#ff00b6] hover:opacity-70">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="img/SDK_LOGOTIPO.png" alt="SDK Sudamerik" class="footer-logo-main">
+                <p class="footer-disclaimer">Los fondos de inversión privados administrados por la administradora de fondos Sudamerik S.A., no son regulados ni fiscalizados por la CMF</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navegación</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="equipo-sdk.html">Equipo SDK</a></li>
+                    <li><a href="impact-investment.html">Fondo Impact Investment</a></li>
+                    <li><a href="fondo-turismo-sustentable.html">Fondo Turismo Sustentable</a></li>
+                    <li><a href="fondo-impulsa-mujer.html">Fondo Impulsa Mujer</a></li>
+                    <li><a href="https://app.regcheq.com/public/denounces/6331c017b1f8105fa3d3ee5e" target="_blank" rel="noopener">Canal de denuncias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contacto</h5>
+                <p>hablemos@sdk-latam.com</p>
+                <p>+56 2 2869 6933</p>
+                <p>Cerro El Plomo 5630, Of. 201</p>
+                <p>Las Condes, Santiago</p>
+                <a href="https://www.linkedin.com/company/sudamerik/" target="_blank" rel="noopener" class="footer-linkedin">LinkedIn →</a>
+            </div>
+            <div class="footer-col footer-col-b">
+                <img src="img/Pagina_web__1_-removebg-preview-3.png" width="200" alt="Empresa B">
+            </div>
+        </div>
+        <div class="copyright-bar">
+            Copyright © 2024 Diseñado por UnderMarket Servicios Informáticos Ltda. – Todos los derechos reservados
+        </div>
+    </footer>
+
+    <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo SDK | SDK Sudamerik</title>
+    <meta name="description" content="Conoce al equipo de SDK Sudamerik: socios, Fund Managers y Venture Partners detrás de la administradora de fondos de impacto para Latinoamérica.">
+    <link rel="icon" type="image/png" href="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-2.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
+    <style>
+        /* --- HERO --- */
+        .hero-section {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/banner-nosotros-scaled-e1706125363224.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* --- SLIDER ANIMADO --- */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .slider-container {
+            overflow: hidden;
+            padding: 40px 0;
+            background: white;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .slider-track {
+            display: flex;
+            width: calc(250px * 16);
+            animation: scroll 40s linear infinite;
+        }
+
+        .logo-item {
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            padding: 0 40px;
+        }
+
+        .logo-item img {
+            filter: grayscale(100%);
+            opacity: 0.5;
+            max-height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<header id="header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/SDK_LOGOTIPO_PRINCIPAL_03-1-1-1-3.png" alt="SDK Sudamerik" style="filter: brightness(0);">
+            </a>
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav>
+            <ul id="nav-list">
+                <li><a href="equipo-sdk.html">Equipo SDK</a></li>
+                <li><a href="impact-investment.html">Fondo Impact Investment</a></li>
+                <li><a href="fondo-turismo-sustentable.html">Fondo Turismo Sustentable</a></li>
+                <li><a href="fondo-impulsa-mujer.html">Fondo Impulsa Mujer</a></li>
+                <li><a href="contacto.html">Hablemos</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="pt-20">
+        <section class="hero-section min-h-[50vh] md:min-h-[60vh] flex items-center py-10 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl">
+                    <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1-228x300-1.png" alt="Isotipo" class="h-16 md:h-24 mb-6 drop-shadow-lg">
+                    <h1 class="text-3xl md:text-7xl font-bold text-white leading-tight drop-shadow-md">
+                        Exceptional people doing<br>
+                        <span class="text-white">exceptional business</span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="slider-container border-b border-gray-100">
+            <div class="slider-track">
+                <div class="logo-item"><img src="img/corfo-removebg-preview-e1712157817154-300x86-1.png" alt="Corfo"></div>
+                <div class="logo-item"><img src="img/logo_b_lab-7F2jgbTv954gPEMsT-300x150-1.png" alt="B Lab"></div>
+                <div class="logo-item"><img src="img/logo-me-300x90-1.png" alt="Mujeres Empresarias"></div>
+                <div class="logo-item"><img src="img/cropped-logo-e1712157885880-300x103-1.png" alt="We Invest"></div>
+                <div class="logo-item"><img src="img/EnCETIIXUAE6_yz-jpg-large-removebg-preview-300x107-1.png" alt="ACVC"></div>
+                <div class="logo-item"><img src="img/gsglogo-300x140-1.png" alt="GSG"></div>
+                <div class="logo-item"><img src="img/corfo-removebg-preview-e1712157817154-300x86-1.png" alt="Corfo"></div>
+                <div class="logo-item"><img src="img/logo_b_lab-7F2jgbTv954gPEMsT-300x150-1.png" alt="B Lab"></div>
+            </div>
+        </section>
+
+        <section class="bg-[#2d4c59] py-16 md:py-24 relative overflow-hidden">
+            <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1-228x300-1.png" class="absolute bottom-0 right-0 opacity-10 w-48 md:w-96 translate-x-1/4 translate-y-1/4 pointer-events-none" alt="">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-[#fcf7f2] p-8 md:p-12 rounded-2xl text-center flex flex-col items-center">
+                        <h2 class="text-2xl font-bold mb-4 uppercase tracking-tighter">CORFO</h2>
+                        <div class="w-16 h-1 bg-[#2d4c59]/20 mb-6"></div>
+                        <p class="text-gray-700 leading-relaxed">Trabajamos de la mano con CORFO para invertir en sectores estratégicos para el desarrollo de nuestro país.</p>
+                    </div>
+                    <div class="bg-[#fcf7f2] p-8 md:p-12 rounded-2xl text-center flex flex-col items-center">
+                        <h2 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Inversionistas</h2>
+                        <div class="w-16 h-1 bg-[#2d4c59]/20 mb-6"></div>
+                        <p class="text-gray-700 leading-relaxed">Contamos con inversionistas nacionales e internacionales que participan activamente en las decisiones estratégicas de inversión.</p>
+                    </div>
+                    <div class="bg-[#fcf7f2] p-8 md:p-12 rounded-2xl text-center flex flex-col items-center">
+                        <h2 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Venture Partners</h2>
+                        <div class="w-16 h-1 bg-[#2d4c59]/20 mb-6"></div>
+                        <p class="text-gray-700 leading-relaxed">Profesionales que aportan conexiones y asesoramiento estratégico para el desarrollo de nuestros fondos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-[#fcf8f2]/30">
+            <div class="container mx-auto px-6 text-center mb-12 md:mb-20">
+                <span class="text-gray-400 uppercase tracking-[0.3em] font-bold text-xs block mb-4">Nosotros</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-[#2d4c59]">Ecosistema SDK</h2>
+            </div>
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12 md:gap-y-20">
+                    <div class="team-card text-center">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square shadow-sm"><img src="img/IMG_5489-Enhanced-NR-1-scaled-1-500x500-1.jpg" alt="Eduardo Carmona" class="w-full h-full object-cover"></div>
+                        <h3 class="text-xl font-bold text-[#2d4c59]">Eduardo Carmona</h3>
+                        <p class="text-sm text-gray-500 px-4">Socio y General Partner Presidente Ejecutivo</p>
+                    </div>
+                    <div class="team-card text-center">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square shadow-sm"><img src="img/Jose-Luis-Irarrazabal.jpg" alt="José Luis Irarrázaval" class="w-full h-full object-cover"></div>
+                        <h3 class="text-xl font-bold text-[#2d4c59]">José Luis Irarrázaval</h3>
+                        <p class="text-sm text-gray-500 px-4">Socio y General Partner</p>
+                    </div>
+                    <div class="team-card text-center">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square shadow-sm"><img src="img/A-FOTO-OFICIAL_IMG_5275-Enhanced-NR-1-scaled-1-500x500-1.jpg" alt="Eduardo Jaramillo" class="w-full h-full object-cover"></div>
+                        <h3 class="text-xl font-bold text-[#2d4c59]">Eduardo Jaramillo</h3>
+                        <p class="text-sm text-gray-500 px-4">Socio y General Partner Gerente General</p>
+                    </div>
+                    <div class="team-card text-center">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square shadow-sm"><img src="img/IMG_5359-Enhanced-NR-1-scaled-1-500x500-1.jpg" alt="Fernanda Meza" class="w-full h-full object-cover"></div>
+                        <h3 class="text-xl font-bold text-[#2d4c59]">Fernanda Meza</h3>
+                        <p class="text-sm text-gray-500 px-4">Socia y General Partner</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12 md:gap-y-20 mt-12 md:mt-20 max-w-5xl mx-auto">
+                    <div class="team-card text-center">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square shadow-sm"><img src="img/A-FOTO-OFICIAL-1-scaled-1-500x500-1.jpg" alt="Javiera Rivera" class="w-full h-full object-cover"></div>
+                        <h3 class="text-xl font-bold text-[#2d4c59]">Javiera Rivera</h3>
+                        <p class="text-sm text-gray-500">Fund Manager y Líder de Impacto</p>
+                    </div>
+                    <div class="team-card text-center">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square shadow-sm"><img src="img/A-FOTO-OFICIAL_IMG_5341-Enhanced-NR-1-scaled-1-500x500-2.jpg" alt="Sebastián Martin" class="w-full h-full object-cover"></div>
+                        <h3 class="text-xl font-bold text-[#2d4c59]">Sebastián Martin</h3>
+                        <p class="text-sm text-gray-500">Fund Manager</p>
+                    </div>
+                    <div class="team-card text-center">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square shadow-sm"><img src="img/OFICIAL_2_IMG_5523-Enhanced-NR-scaled-1-500x500-1.jpg" alt="Verónica Binder" class="w-full h-full object-cover"></div>
+                        <h3 class="text-xl font-bold text-[#2d4c59]">Verónica Binder</h3>
+                        <p class="text-sm text-gray-500">Fund Manager y Líder de Impacto</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-20 mt-12 md:mt-20 max-w-3xl mx-auto">
+                    <div class="team-card text-center">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square shadow-sm"><img src="img/A-FOTO-OFICIAL_IMG_5535-Enhanced-NR-1-scaled-1-500x500-1.jpg" alt="Fabiola Flores" class="w-full h-full object-cover"></div>
+                        <h3 class="text-xl font-bold text-[#2d4c59]">Fabiola Flores</h3>
+                        <p class="text-sm text-gray-500">Abogada Corporativa</p>
+                    </div>
+                    <div class="team-card text-center">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square shadow-sm bg-gray-100"><img src="img/Captura-de-pantalla-2025-03-26-a-las-11.01.23 a.m.-min.png" alt="Elías Flores" class="w-full h-full object-cover"></div>
+                        <h3 class="text-xl font-bold text-[#2d4c59]">Elías Flores</h3>
+                        <p class="text-sm text-gray-500">Jefe de Administración y Finanzas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="img/SDK_LOGOTIPO.png" alt="SDK Sudamerik" class="footer-logo-main">
+                <p class="footer-disclaimer">Los fondos de inversión privados administrados por la administradora de fondos Sudamerik S.A., no son regulados ni fiscalizados por la CMF</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navegación</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="equipo-sdk.html">Equipo SDK</a></li>
+                    <li><a href="impact-investment.html">Fondo Impact Investment</a></li>
+                    <li><a href="fondo-turismo-sustentable.html">Fondo Turismo Sustentable</a></li>
+                    <li><a href="fondo-impulsa-mujer.html">Fondo Impulsa Mujer</a></li>
+                    <li><a href="https://app.regcheq.com/public/denounces/6331c017b1f8105fa3d3ee5e" target="_blank" rel="noopener">Canal de denuncias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contacto</h5>
+                <p>hablemos@sdk-latam.com</p>
+                <p>+56 2 2869 6933</p>
+                <p>Cerro El Plomo 5630, Of. 201</p>
+                <p>Las Condes, Santiago</p>
+                <a href="https://www.linkedin.com/company/sudamerik/" target="_blank" rel="noopener" class="footer-linkedin">LinkedIn →</a>
+            </div>
+            <div class="footer-col footer-col-b">
+                <img src="img/Pagina_web__1_-removebg-preview-3.png" width="200" alt="Empresa B">
+            </div>
+        </div>
+    </footer>
+    <div class="copyright-bar">
+        Copyright © 2024 Diseñado por UnderMarket Servicios Informáticos Ltda. – Todos los derechos reservados
+    </div>
+
+    <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hablemos | SDK Sudamerik</title>
+    <meta name="description" content="Contáctanos si tu startup busca inversión de impacto. SDK Sudamerik, Cerro El Plomo 5630, Las Condes, Santiago.">
+    <link rel="icon" type="image/png" href="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-2.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Kanit:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/site.css">
+    <style>
+        /* --- HERO CONTACTO --- */
+        #hero-contacto {
+            min-height: 60vh;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/futuristic-dubai-landscape-scaled-1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+        }
+
+        /* --- ESTILOS FORMULARIO --- */
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-body);
+        }
+
+        .contact-form label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .btn-submit {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 980px) {
+            #hero-contacto { min-height: 50vh; text-align: center; }
+            #hero-contacto .flex { flex-direction: column; }
+            #hero-contacto .mt-8 { border-left: none; border-top: 4px solid white; padding: 20px 0 0; margin-left: auto; margin-right: auto; }
+        }
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/SDK_LOGOTIPO_PRINCIPAL_03-1-1-1-3.png" alt="SDK Sudamerik" style="filter: brightness(0);">
+            </a>
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav>
+            <ul id="nav-list">
+                <li><a href="equipo-sdk.html">Equipo SDK</a></li>
+                <li><a href="impact-investment.html">Fondo Impact Investment</a></li>
+                <li><a href="fondo-turismo-sustentable.html">Fondo Turismo Sustentable</a></li>
+                <li><a href="fondo-impulsa-mujer.html">Fondo Impulsa Mujer</a></li>
+                <li><a href="contacto.html">Hablemos</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <section id="hero-contacto">
+            <div class="max-w-[1100px] mx-auto px-5 w-full text-white">
+                <div class="flex items-center gap-4">
+                    <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1-228x300.png" class="h-16 md:h-20 brightness-0 invert" alt="">
+                    <h1 class="text-4xl md:text-7xl font-bold leading-tight">Formulario<br>de contacto</h1>
+                </div>
+                <div class="mt-8 border-l-4 border-white pl-6 max-w-xl">
+                    <p class="text-lg md:text-2xl font-medium leading-relaxed">Transforma el mundo con tu idea.<br>Estamos aquí para apoyarte.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-20 bg-[#fcf7f2]">
+            <div class="max-w-[1100px] mx-auto px-5">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
+
+                    <div class="md:col-span-3 bg-white p-6 md:p-10 rounded-2xl shadow-sm">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-8">Envíanos un mensaje</h2>
+                        <form action="#" method="post" class="contact-form" enctype="multipart/form-data">
+                            <div>
+                                <label>Tu nombre</label>
+                                <input type="text" name="your-name" required>
+                            </div>
+                            <div>
+                                <label>Nombre startup</label>
+                                <input type="text" name="startup-name" required>
+                            </div>
+                            <div>
+                                <label>Tu correo electrónico</label>
+                                <input type="email" name="your-email" required>
+                            </div>
+                            <div>
+                                <label>Teléfono de contacto</label>
+                                <input type="tel" name="your-tel" required>
+                            </div>
+                            <div>
+                                <label>Asunto</label>
+                                <input type="text" name="your-subject" required>
+                            </div>
+                            <div>
+                                <label>Tu mensaje (opcional)</label>
+                                <textarea name="your-message" rows="5"></textarea>
+                            </div>
+                            <div>
+                                <label class="block mb-2">Adjuntar archivo (opcional)</label>
+                                <input type="file" name="file-upload" class="border-none p-0 text-sm">
+                            </div>
+                            <button type="submit" class="btn-submit uppercase tracking-widest mt-4 w-full md:w-auto">Enviar mensaje</button>
+                        </form>
+                    </div>
+
+                    <div class="md:col-span-2 space-y-10">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 uppercase tracking-wider border-b border-black/10 pb-2">Datos de contacto</h3>
+                            <p class="mb-2"><strong>Correo:</strong></p>
+                            <a href="mailto:contacto@sudamerik.net" class="text-lg hover:underline break-words">contacto@sudamerik.net</a>
+                            <p class="mt-4 mb-2"><strong>Teléfono:</strong></p>
+                            <a href="tel:+56228696933" class="text-lg hover:underline">+56 2 2869 6933</a>
+                        </div>
+
+                        <div>
+                            <p class="mb-2"><strong>Dirección:</strong></p>
+                            <p class="text-lg">Cerro el Plomo 5630, Las Condes<br>Oficina 201, Santiago.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Cerro+El+Plomo+5630+Las+Condes+Santiago" target="_blank" class="inline-block mt-4 text-sm font-bold uppercase tracking-widest hover:opacity-70">Ver en Google Maps →</a>
+                        </div>
+
+                        <div class="pt-6 flex justify-center md:justify-start">
+                            <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-2.png" class="h-32 opacity-20" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="img/SDK_LOGOTIPO.png" alt="SDK Sudamerik" class="footer-logo-main">
+                <p class="footer-disclaimer">Los fondos de inversión privados administrados por la administradora de fondos Sudamerik S.A., no son regulados ni fiscalizados por la CMF</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navegación</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="equipo-sdk.html">Equipo SDK</a></li>
+                    <li><a href="impact-investment.html">Fondo Impact Investment</a></li>
+                    <li><a href="fondo-turismo-sustentable.html">Fondo Turismo Sustentable</a></li>
+                    <li><a href="fondo-impulsa-mujer.html">Fondo Impulsa Mujer</a></li>
+                    <li><a href="https://app.regcheq.com/public/denounces/6331c017b1f8105fa3d3ee5e" target="_blank" rel="noopener">Canal de denuncias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contacto</h5>
+                <p>hablemos@sdk-latam.com</p>
+                <p>+56 2 2869 6933</p>
+                <p>Cerro El Plomo 5630, Of. 201</p>
+                <p>Las Condes, Santiago</p>
+                <a href="https://www.linkedin.com/company/sudamerik/" target="_blank" rel="noopener" class="footer-linkedin">LinkedIn →</a>
+            </div>
+            <div class="footer-col footer-col-b">
+                <img src="img/Pagina_web__1_-removebg-preview-3.png" width="200" alt="Empresa B">
+            </div>
+        </div>
+        <div class="copyright-bar">
+            Copyright © 2024 Diseñado por UnderMarket Servicios Informáticos Ltda. – Todos los derechos reservados
+        </div>
+    </footer>
+
+    <script src="js/site.js"></script>
+</body>
+</html>

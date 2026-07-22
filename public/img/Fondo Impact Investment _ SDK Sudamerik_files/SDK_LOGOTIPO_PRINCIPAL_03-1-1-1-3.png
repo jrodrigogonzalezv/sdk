@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDK Sudamerik | Inversión de Impacto</title>
+    
+    <!-- Fuentes: Kanit para títulos e Inter para cuerpo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Kanit:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #10281a;
+            --bg-cream: #fcf7f2;
+            --bg-dark-section: #263e3f;
+            --text-black: #000000;
+            --white: #ffffff;
+            --font-header: 'Kanit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+            
+            /* Colores de las Verticales exactos */
+            --color-impact: #e5ddd5;
+            --color-turismo: #00a99d;
+            --color-mineria: #c1c1c1;
+            --color-mujer: #fbbca3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-black);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-black);
+            font-family: var(--font-header);
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        /* --- HERO SLIDER (Ajustado para un "Buen Alto") --- */
+        .hero-slider {
+            position: relative;
+            height: 85vh; /* Ocupa el 85% del alto de la pantalla */
+            width: 100%;
+            overflow: hidden;
+            background-color: var(--white);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center; /* Centrado vertical del contenido */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-header);
+            font-size: clamp(36px, 6vw, 64px);
+            color: var(--primary-dark);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero-prop {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 20px;
+            color: var(--text-black);
+            font-weight: 300;
+        }
+
+        .hero-prop::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background-color: var(--text-black);
+        }
+
+        /* --- PURPOSE --- */
+        .purpose {
+            background-color: var(--bg-cream);
+            padding: 100px 0;
+        }
+
+        .purpose-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .purpose-image img {
+            width: 100%;
+            max-width: 380px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .purpose-text h2 {
+            font-family: var(--font-header);
+            font-size: 28px;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .purpose-text p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* --- PILLARS --- */
+        .pillars {
+            background-color: var(--bg-dark-section);
+            padding: 80px 0;
+            color: var(--white);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            font-family: var(--font-header);
+            font-size: 24px;
+        }
+
+        .section-title img {
+            height: 45px;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .pillar-card {
+            background: rgba(255,255,255,0.05);
+            padding: 35px 25px;
+            border-radius: 10px;
+        }
+
+        .pillar-card h3 {
+            font-family: var(--font-header);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .pillar-card p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* --- VERTICALES --- */
+        .verticals {
+            padding: 100px 0;
+            background-color: var(--bg-cream);
+        }
+
+        .verticals-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .vertical-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-black);
+            aspect-ratio: 1 / 1;
+            transition: var(--transition);
+        }
+
+        .vertical-card img {
+            width: 70px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .vertical-card h4 {
+            font-family: var(--font-header);
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .card-impact { background-color: var(--color-impact); }
+        .card-turismo { background-color: var(--color-turismo); }
+        .card-mineria { background-color: var(--color-mineria); }
+        .card-mujer { background-color: var(--color-mujer); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: linear-gradient(90deg, #0e251b 0%, #1e649b 100%);
+            color: var(--white);
+            padding: 70px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .footer-col h5 {
+            font-family: var(--font-header);
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: 14px;
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-logo-main {
+            width: 160px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .copyright-bar {
+            background-color: #f5f5f5;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            margin-top: 50px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 980px) {
+            .hero-slider { height: 70vh; }
+            .purpose-grid, .pillars-grid, .verticals-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .vertical-card { aspect-ratio: auto; min-height: 200px; }
+            .hero h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/SDK_LOGOTIPO.png" alt="SDK Sudamerik">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Equipo SDK</a></li>
+                    <li><a href="#">Fondo Impact Investment</a></li>
+                    <li><a href="#">Fondo Turismo Sustentable</a></li>
+                    <li><a href="#">Fondo Impulsa Mujer</a></li>
+                    <li><a href="#">Hablemos</a></li>
+                    <li><a href="#">🇺🇸 Inglés</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Slider Hero Section con Alto Mejorado -->
+    <section class="hero-slider">
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url('img/iStock-1475063194-2.jpg');">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Inversión de impacto para Latinoamérica</h1>
+                    <div class="hero-prop">
+                        Potenciar el desarrollo de negocios que impactan positivamente el planeta, es nuestro propósito.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 (Ejemplo para cuando añadas más imágenes) -->
+        <!-- <div class="slide" style="background-image: url('img/otra-imagen.jpg');">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Sostenibilidad Financiera</h1>
+                    <div class="hero-prop">
+                        Creamos valor real para nuestros inversionistas y el entorno.
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+    <section class="purpose">
+        <div class="container">
+            <div class="purpose-grid">
+                <div class="purpose-image">
+                    <img src="img/Asset-1.png" alt="Riesgo Retorno Impacto">
+                </div>
+                <div class="purpose-text">
+                    <h2>Creemos en una nueva economía de impacto para Latinoamérica</h2>
+                    <p><strong>Somos una Administradora de Fondos de Capitales privados con apalancamiento público</strong>, cuyo foco de inversión son empresas de alto impacto que agreguen valor tecnológico, social, medioambiental y económico, fomenten el desarrollo de los territorios y sus resultados sean medibles a través de la <strong>Certificación B.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pillars">
+        <div class="container">
+            <div class="section-title">
+                <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1.png" alt="Isotipo">
+                <span>Pilares SDK</span>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>Rentabilidad con Impacto</h3>
+                    <p>Creemos que la rentabilidad financiera es primordial para generar un impacto sostenible y medible en el tiempo. Garantizamos que nuestros portafolios tengan una visión, gestión y medición de impacto permanente.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Innovación</h3>
+                    <p>Buscamos proyectos con mérito innovador que consideren el uso de tecnologías y nuevos modelos de negocios en industrias y segmentos emergentes.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Inversionistas</h3>
+                    <p>Agregamos valor a nuestros inversionistas y emprendedores a lo largo del camino que recorren junto a nosotros, operando con foco en sostenibilidad financiera, impacto y modelos de gestión de excelencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="verticals">
+        <div class="container">
+            <div class="section-title">
+                <img src="img/SDK_LOGOTIPO_ISOTIPO_03-1165x1536-1-1-228x300-1.png" alt="Isotipo Black">
+                <span style="color: black;">Verticales de Impacto</span>
+            </div>
+            
+            <div class="verticals-grid">
+                <a href="#" class="vertical-card card-impact">
+                    <img src="img/SDK_ICONOS_PPT-01-2.png" alt="Icono 1">
+                    <h4>Fondo Impact Investment</h4>
+                </a>
+                <a href="#" class="vertical-card card-turismo">
+                    <img src="img/SDK_ICONOS_PPT-02-2.png" alt="Icono 2">
+                    <h4>Turismo Sustentable</h4>
+                </a>
+                <a href="#" class="vertical-card card-mineria">
+                    <img src="img/SDK_ICONOS_PPT-03-1-1.png" alt="Icono 3">
+                    <h4>Minería Sustentable</h4>
+                </a>
+                <a href="#" class="vertical-card card-mujer">
+                    <img src="img/SDK_ICONOS_PPT-04-1-1.png" alt="Icono 4">
+                    <h4>Fondo Impulsa Mujer</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="img/SDK_LOGOTIPO.png" alt="SDK White" class="footer-logo-main" style="filter: brightness(0) invert(1);">
+                    <p class="footer-disclaimer">Los fondos de inversión privados administrados por la administradora de fondos Sudamerik S.A., no son regulados ni fiscalizados por la CMF</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Navegación</h5>
+                    <a href="#">Inicio</a>
+                    <a href="#">Equipo SDK</a>
+                    <a href="#">Fondo Impact Investment</a>
+                    <a href="#">Fondo Turismo Sustentable</a>
+                    <a href="#">Fondo Impulsa Mujer</a>
+                    <a href="#">Canal de denuncias</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Contacto</h5>
+                    <p>hablemos@sdk-latam.com</p>
+                    <p>Av. Apoquindo 4775, Of 1002.</p>
+                    <p>Las Condes</p>
+                </div>
+                <div class="footer-col">
+                    <img src="img/Pagina_web__1_-removebg-preview-3.png" width="200" alt="Empresa B">
+                </div>
+            </div>
+        </div>
+        <div class="copyright-bar">
+            Copyright © 2024 Diseñado por UnderMarket Servicios Informáticos Ltda. – Todos los derechos reservados
+        </div>
+    </footer>
+
+    <script>
+        // Manejo de scroll para el header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+
+        // Lógica para rotar slides si hay más de uno
+        const slides = document.querySelectorAll('.slide');
+        if (slides.length > 1) {
+            let current = 0;
+            setInterval(() => {
+                slides[current].classList.remove('active');
+                current = (current + 1) % slides.length;
+                slides[current].classList.add('active');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
